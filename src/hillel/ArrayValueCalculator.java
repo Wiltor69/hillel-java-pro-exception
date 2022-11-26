@@ -6,8 +6,7 @@ import hillel.exeption.ArraySizeException;
 
 public class ArrayValueCalculator {
 
-    public  int doCalc (String [][]strings) throws ArraySizeException, NumberFormatException,
-            ArrayDataException {
+    public  int doCalc (String [][]strings) throws ArraySizeException, ArrayDataException {
 
         int sum = 0;
 
@@ -25,6 +24,8 @@ public class ArrayValueCalculator {
             return sum;
         }catch (NumberFormatException nf){
             throw new ArrayDataException("This element is not number");
+        }catch (NullPointerException np){
+            throw new ArrayDataException("The element is null");
         }
         }
 
